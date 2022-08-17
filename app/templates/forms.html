@@ -1,0 +1,23 @@
+<!-- form.hidden_tag (line 7) to render multiple hidden fields, like form.email.label -->
+<!-- Comes from Flask-WTF https://flask-wtf.readthedocs.io/en/0.15.x/quickstart/ -->
+<!-- Syntax of having bootstrap in form submit info allows Python to take the data from the form -->
+<!-- and inject it into the auth route, while still styling the form -->
+
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        <fieldset id="email-field">
+            {{ form.email.label }}
+            {{ form.email(class = 'form-control', placeholder = 'place email here ') }}
+        </fieldset>
+    </div>
+
+    <fieldset id="pass-field">
+        {{ form.password.label }}
+        {{ form.password(class = "form-control", placeholder = "Place password here ") }}
+    </fieldset>
+
+    <!-- Submit button area -->
+    {{ form.submit_button(class = "btn btn-primary btn-block mt-2")}}
+
+</form>
